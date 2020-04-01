@@ -6,12 +6,11 @@
 
 import numpy as np
 import pandas as pd
-import itertools
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
-
+import itertools
 
 # In[6]:
 
@@ -48,13 +47,14 @@ tfidf_test=tfidf_vectorizer.transform(x_test)
 
 
 #Initialize a PassiveAggressiveClassifier
-pac=PassiveAggressiveClassifier(max_iter=50)
-pac.fit(tfidf_train,y_train)
+p=PassiveAggressiveClassifier(max_iter=50)
+p.fit(tfidf_train,y_train)
 #Predict on the test set and calculate accuracy
-y_pred=pac.predict(tfidf_test)
-print(y_pred)
-score=accuracy_score(y_test,y_pred)
-print(f'Accuracy: {round(score*100,2)}%')
+predict=p.predict(tfidf_test)
+print(predict)
+score=accuracy_score(y_test,predict)
+accuracy=score*100
+print('Accuracy: ',accuracy,'%')
 
 
 # In[11]:
