@@ -59,7 +59,7 @@ print('Accuracy: ',accuracy,'%')
 # In[11]:
 
 
-confusion_matrix(y_test,y_pred, labels=['FAKE','REAL'])
+confusion_matrix(y_test,predict, labels=['FAKE','REAL'])
 
 
 # In[ ]:
